@@ -18,9 +18,7 @@ Nota Bene : with paid version 'PRO' you can create buttons to send commands, eve
 
 ## First install ESP32 devt environnement
 
-Everything available on [ESP-IDF GITHUB](https://github.com/espressif/esp-idf/blob/master/README.md).
-
-if you want to know more about ESP32 developpement environnement see [ESP-IDF Programming Guide](https://dl.espressif.com/doc/esp-idf/latest/api-guides/build-system.html).
+Everything available on [ESP-IDF GITHUB](https://github.com/espressif/esp-idf/blob/master/README.md). If you want to know more about ESP32 developpement environnement see [ESP-IDF Programming Guide](https://dl.espressif.com/doc/esp-idf/latest/api-guides/build-system.html).
 
 ## Then create your own application developpement environnement
 
@@ -46,14 +44,14 @@ you should see now following directories :
     
     ESP32-HM10  esp32-snippets
 
-4/ Create <main> dir in <esp> :
+4/ Create 'main' dir in 'esp' :
     
     esp/components$ cd ..
     esp$ mkdir main
     esp$ cd main
     esp/main$
     
-5/ Create the <main.cpp> file containing : 
+5/ Create the 'main.cpp' file containing : 
 
     esp/main$ nano main.cpp
     
@@ -70,7 +68,7 @@ copy paste following code and save:
         SampleServerHM10();
     } // app_main
     
-6/ Copy the <component.mk> file from <esp/components/ESP32-HM10/component.mk> to <esp/main>
+6/ Copy the 'component.mk' file from 'esp/components/ESP32-HM10/component.mk' to 'esp/main'
 
     esp/main$ cp ../components/ESP32-HM10/component.mk ./
     
