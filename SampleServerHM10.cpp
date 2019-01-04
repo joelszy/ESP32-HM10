@@ -125,7 +125,7 @@ void SampleServerHM10(void)
 		ESP_LOGD(LOG_TAG, "***********************************");
 		System::dumpHeapInfo();
 		ESP_LOGD(LOG_TAG, "***********************************\n\n\n");
-		sleep_ms(10000);
+		sleep_ms(15000);
 	}
 	// JS : 
 
