@@ -51,7 +51,7 @@ you should see now following directories :
     esp$ cd main
     esp/main$
     
-5/ Create the 'main.cpp' file containing : 
+5/ Create the 'main.cpp' file containing call to main function: 
 
     esp/main$ nano main.cpp
     
