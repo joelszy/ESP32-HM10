@@ -18,7 +18,9 @@ Nota Bene : with paid version 'PRO' you can create buttons to send commands, eve
 
 ## First install ESP32 devt environnement
 
-[](https://github.com/espressif/esp-idf/blob/master/README.md)
+Everything available on [ESP-IDF GITHUB](https://github.com/espressif/esp-idf/blob/master/README.md).
+
+if you want to know more about ESP32 developpement environnement see [ESP-IDF Programming Guide](https://dl.espressif.com/doc/esp-idf/latest/api-guides/build-system.html).
 
 ## Then create your own application developpement environnement
 
