@@ -109,7 +109,7 @@ void SampleServerHM10(void)
 {
 	//esp_log_level_set("*", ESP_LOG_DEBUG);
 	MainBLEServer* pMainBleServer = new MainBLEServer();
-	pMainBleServer->setStackSize(20000);
+	pMainBleServer->setStackSize(25000);
 	pMainBleServer->start();
 
 	// JS : check config
