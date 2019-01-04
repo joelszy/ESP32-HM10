@@ -160,8 +160,9 @@ non mandatory :
     *you can send messages "XXX".
     
     *after sending a message you will reveive a "OK received [XXX]"
-    
-##Customize for your application and enjoy :)
+
+
+## Customize for your application and enjoy :)
     
     
     
