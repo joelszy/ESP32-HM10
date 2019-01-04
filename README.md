@@ -2,7 +2,7 @@
 HM10 Sample Server for ESP32
 
 
-# For whom ?
+# For who ?
 
 For HM10 Users : If you are using HM10 modules for you IOT applications, you can switch easily to ESP32 module for a all in one solution - CPU + HM10 BT module -
 
@@ -10,21 +10,19 @@ For new IOT DIY : if you plan to send command to a device with your phone, it ca
 
 On IOS you will be able to send command using existing apps, for example : 
 
-[FREE](https://itunes.apple.com/fr/app/hm10-bluetooth-serial-lite/id1030454675?mt=8)
+[FREE IOS HM10 Bluetooth Serial application](https://itunes.apple.com/fr/app/hm10-bluetooth-serial-lite/id1030454675?mt=8)
 
-[PAID](https://itunes.apple.com/fr/app/hm10-bluetooth-serial-pro/id1221924372)
-
-I recommand last one as you can create buttons to send commands, even complex commands.
+Nota Bene : with paid version 'PRO' you can create buttons to send commands, even complex commands.
 
 # How to install
 
 ## First install ESP32 devt environnement
 
-https://raw.githubusercontent.com/espressif/esp-idf/master/README.md
+[](https://github.com/espressif/esp-idf/blob/master/README.md)
 
 ## Then create your own application developpement environnement
 
-1/ Create a working dir <esp> with <components> subdir and cd into it: 
+1/ Create a working dir 'esp' with 'components' subdir and cd into it: 
     
     $ mkdir esp
     $ cd esp
@@ -42,9 +40,9 @@ https://raw.githubusercontent.com/espressif/esp-idf/master/README.md
 
     if you type :  esp/components$ ls
     
-    you should see now following directories :
+you should see now following directories :
     
-                ESP32-HM10  esp32-snippets
+    ESP32-HM10  esp32-snippets
 
 4/ Create <main> dir in <esp> :
     
@@ -57,7 +55,7 @@ https://raw.githubusercontent.com/espressif/esp-idf/master/README.md
 
     esp/main$ nano main.cpp
     
-    copy paste following code and save:
+copy paste following code and save:
 
     #include "sdkconfig.h"
     #include <esp_system.h>
@@ -80,44 +78,44 @@ https://raw.githubusercontent.com/espressif/esp-idf/master/README.md
     esp/main$ cd ..
     esp$ 
     
-    Create partition file :
+Create partition file :
     
     esp$ nano partitions.csv
     
-    copy paste following table and save:
+copy paste following table and save:
     
-# Name,   Type, SubType, Offset,  Size, Flags
-# Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild
-nvs,      data, nvs,     0x9000,   0x4000
-otadata,  data, ota,     0xd000,   0x2000
-phy_init, data, phy,     0xf000,   0x1000
-factory,  0,    0,       0x10000,  0x200000
-ota_0,    0,    ota_0,   0x210000, 0x100000
-storage,  data, spiffs,  0x310000, 0x0f0000,
+    # Name,   Type, SubType, Offset,  Size, Flags
+    # Note: if you change the phy_init or app partition offset, make sure to change the offset in Kconfig.projbuild
+    nvs,      data, nvs,     0x9000,   0x4000
+    otadata,  data, ota,     0xd000,   0x2000
+    phy_init, data, phy,     0xf000,   0x1000
+    factory,  0,    0,       0x10000,  0x200000
+    ota_0,    0,    ota_0,   0x210000, 0x100000
+    storage,  data, spiffs,  0x310000, 0x0f0000,
 
-    Create Makefile :
+Create Makefile :
     
     esp$ nano Makefile
     
-    copy paste following code and save:
+copy paste following code and save:
     
-#
-# This is a project Makefile. It is assumed the directory this Makefile resides in is a
-# project subdirectory.
-#
+    #
+    # This is a project Makefile. It is assumed the directory this Makefile resides in is a
+    # project subdirectory.
+    #
 
-PROJECT_NAME := HM10_serverapp
+    PROJECT_NAME := HM10_serverapp
 
-include $(IDF_PATH)/make/project.mk
+    include $(IDF_PATH)/make/project.mk
     
     
 8/ Run make
 
     esp$ make -j4
     
-    the first time you run make command you should see sdkconfig application popup.
+the first time you run make command you should see sdkconfig application popup.
     
-    mandatory :
+mandatory :
     
     Partition Table /
         Partition Table --> Custom partition table CSV  --> needed in debug mode as app size is to big to fit in default partition size
@@ -134,7 +132,7 @@ include $(IDF_PATH)/make/project.mk
         [*] Bluedroid Enable
             Bluetooth event (callback to application) task size --> 8192 
     
-    non mandatory :
+non mandatory :
     
     Component config / Log output /
     Default log verbosity --> Debug --> needed to see message through esp monitoring exchanged between ESP server & client 
@@ -153,19 +151,17 @@ include $(IDF_PATH)/make/project.mk
     
 10/ Test it
 
-    open HM10 Bluetooth Serial on your IOS device.
+    *open HM10 Bluetooth Serial on your IOS device.
     
-    apps should scan BLE device and show a : <ESP32_HM10> device.
+    *apps should scan BLE device and show a : <ESP32_HM10> device.
     
-    click on it.
+    *click on it. Now you should receive Hello messages every 5seconds.
     
-    now you should receive Hello messages every 5seconds.
+    *you can send messages "XXX".
     
-    you can send messages "XXX".
+    *after sending a message you will reveive a "OK received [XXX]"
     
-    after sending a message you will reveive a "OK received [XXX]"
-    
-11/ Customize for your application and enjoy :)
+##Customize for your application and enjoy :)
     
     
     
